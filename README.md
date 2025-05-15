@@ -29,3 +29,9 @@ O projeto "GestaoFrotaVeicular" é uma aplicação web desenvolvida em ASP.NET Core
 
 8.  **Objetivo de Aprendizagem:**
     * Consolidar uma visão completa sobre o desenvolvimento de Web Services seguros e escaláveis, aplicando os conceitos aprendidos diretamente em um projeto com relevância prática para gestão empresarial.
+
+# Diagrama de Classes
+
+
+<img style="margin-right: 30px" src="DM109-class-diagram.png" alt="Class Diagram"/><br>
+
