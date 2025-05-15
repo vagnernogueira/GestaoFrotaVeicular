@@ -1,3 +1,23 @@
+# [INATEL – Pós-graduação](https://inatel.br/) – [Desenvolvimento Mobile e Cloud Computing](https://inatel.br/pos/desenvolvimento-mobile-e-cloud-computing)
+## Disciplina DM106 - Desenvolvimento de Web Services com Segurança sob a Plataforma .NET  
+## Prof. Me. José Andery Carneiro
+### Aluno [Vagner Nogueira](https://github.com/vagnernogueira)<br>
+
+# Trabalho da Disciplina<br>
+
+
+---
+## Atividade proposta
+
+(1) Diagrama de classes do seu projeto, similar ao InventarioMed, contendo obrigatoriamente três classes, A, B e C, sendo que a relação de A e B é de (1:N) e a relação de A e C é de (N:N). Programa console do seu projeto, similar ao desenvolvido na aula.
+---
+### Entrega da Atividade 1
+
+O diagrama de classes se encontra vinculado neste repositório assim como a implementação do projeto console.
+
+---
+
+
 # GestaoFrotaVeicular
 
 **Descrição:**
