@@ -18,7 +18,7 @@
 
 ### Entrega da Atividade 1
 
-O diagrama de classes se encontra vinculado neste repositório assim como a implementação do projeto console.
+O diagrama de classes se encontra neste repositório assim como a implementação do projeto console.
 
 ---
 
