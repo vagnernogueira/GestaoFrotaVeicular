@@ -4,26 +4,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GestaoFrotaVeicularConsole
+namespace GestaoFrotaVeicular.Shared.Models
 {
-    internal class Vehicle
+    public class Vehicle
     {
+        public int Id { get; set; }
+
         public string MarkModel { get; set; }
 
         public int Year {  get; set; }
 
         public string Plate {  get; set; }
 
-        public Vehicle(string markModel, int year, string plate)
+        public int VehicleTypeId { get; set; }
+
+        public Vehicle(string markModel, int year, string plate, int vehicleTypeId)
         {
             MarkModel = markModel;
             Year = year;
             Plate = plate;
+            VehicleTypeId = vehicleTypeId;
         }
 
         public override string? ToString()
         {
-            return $@"Veiculo: {MarkModel}";
+            return $@"Veiculo: {MarkModel}/{Year}/{Plate}";
         }
     }
 }

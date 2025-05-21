@@ -6,4 +6,14 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="6.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GestaoFrotaVeicular.Shared.Data\GestaoFrotaVeicular.Shared.Data.csproj" />
+    <ProjectReference Include="..\GestaoFrotaVeicular.Shared.Models\GestaoFrotaVeicular.Shared.Models.csproj" />
+  </ItemGroup>
+
 </Project>
