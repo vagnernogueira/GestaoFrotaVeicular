@@ -11,7 +11,7 @@ namespace GestaoFrotaVeicular.Shared.Data.DB
 {
     public class GestaoFrotaVeicularContext : DbContext
     {
-        private string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=GestaoFrotaVeicular_BD;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
+        private string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=GestaoFrotaVeicular_BD_V0;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
 
         public DbSet<Vehicle> Vehicle { get; set; }
 
@@ -19,7 +19,8 @@ namespace GestaoFrotaVeicular.Shared.Data.DB
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(connectionString);
+            optionsBuilder.UseSqlServer(connectionString)
+                .UseLazyLoadingProxies();
         }
     }
 }

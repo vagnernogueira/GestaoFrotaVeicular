@@ -16,14 +16,15 @@ namespace GestaoFrotaVeicular.Shared.Models
 
         public string Plate {  get; set; }
 
-        public int VehicleTypeId { get; set; }
+        public virtual VehicleType? VehicleType { get; set; }
 
-        public Vehicle(string markModel, int year, string plate, int vehicleTypeId)
+        public Vehicle() { }
+
+        public Vehicle(string markModel, int year, string plate)
         {
             MarkModel = markModel;
             Year = year;
             Plate = plate;
-            VehicleTypeId = vehicleTypeId;
         }
 
         public override string? ToString()

@@ -7,8 +7,7 @@ create table Vehicle (
 	Plate nvarchar(255) not null
 );
 
-ALTER TABLE Vehicle
-ADD VehicleTypeId INT;
+ALTER TABLE Vehicle ADD VehicleTypeId INT null;
 
 ALTER TABLE Vehicle
 ADD CONSTRAINT FK_Vehicle_VehicleType
@@ -24,3 +23,11 @@ create table VehicleType (
 );
 
 select * from VehicleType
+
+delete from VehicleType
+
+delete from Vehicle
+
+drop table VehicleType
+
+drop table Vehicle

@@ -61,8 +61,7 @@ internal class Program
             else
             {
                 Console.WriteLine($"Veiculos do Tipo: {vehicleType.Name}");
-                IEnumerable<Vehicle> vehicles = vehicleDAL.ListBy(vehicle => vehicle.VehicleTypeId == vehicleType.Id);
-                foreach (var vehicle in vehicles)
+                foreach (var vehicle in vehicleType.Vehicles)
                 {
                     Console.WriteLine($"Veiculo: {vehicle.MarkModel}/{vehicle.Year}/{vehicle.Plate}");
                 }
@@ -95,9 +94,13 @@ internal class Program
             if (vehicleType is null) Console.WriteLine($"O Tipo de Veículo {vehicleTypeName} não existe.");
             else
             {
-                Vehicle vehicle = new(markModel, year, plate, vehicleType.Id);
+                Vehicle vehicle = new(markModel, year, plate);
                 vehicleDAL.Create(vehicle);
-                Console.WriteLine($"Veículo {plate} adcionado com sucesso!");
+                Console.WriteLine($"Veículo {plate} CREATE com sucesso!");
+                vehicleType.Vehicles?.Add(vehicle);
+                vehicle.VehicleType = vehicleType;
+                vehicleDAL.Update(vehicle);
+                Console.WriteLine($"Veículo {plate} UPDATE com sucesso!");
             }
         }
 

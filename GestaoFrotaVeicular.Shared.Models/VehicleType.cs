@@ -14,6 +14,8 @@ namespace GestaoFrotaVeicular.Shared.Models
 
         public string Description { get; set; }
 
+        public virtual ICollection<Vehicle>? Vehicles { get; set; } = new List<Vehicle>();
+
         public VehicleType(string name, string description)
         {
             Name = name;
