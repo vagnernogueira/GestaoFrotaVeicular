@@ -1,3 +1,4 @@
+using GestaoFrotaVeicular.EndPoints;
 using GestaoFrotaVeicular.Shared.Data.DB;
 using GestaoFrotaVeicular.Shared.Models;
 using System.Text.Json.Serialization;
@@ -8,10 +9,23 @@ builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(options =
     options.SerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
     options.SerializerOptions.WriteIndented = true;
 });
+builder.Services.AddDbContext<GestaoFrotaVeicularContext>();
+builder.Services.AddTransient<DAL<Vehicle>>();
+builder.Services.AddTransient<DAL<VehicleType>>();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo { Title = "Gestão de Frota Veicular", Version = "v1" });
+});
 var app = builder.Build();
-app.MapGet("/", () =>
-    {
-        var dal = new DAL<Vehicle>();
-        return dal.Read();
-    });
+
+app.AddEndPointVehicle();
+app.AddEndPointVehicleType();
+
+/**
+ <see cref="http://localhost:5101/Swagger/index.html"/>
+ */
+app.UseSwagger();
+app.UseSwaggerUI();
+
 app.Run();
