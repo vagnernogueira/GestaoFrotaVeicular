@@ -6,19 +6,42 @@
 
 ### Aluno [Vagner Nogueira](https://github.com/vagnernogueira)<br>
 
-# Trabalho da Disciplina<br>
-
 ---
+
+# Trabalho da Disciplina<br>
 
 ## Atividade proposta
 
 (1) Diagrama de classes do seu projeto, similar ao InventarioMed, contendo obrigatoriamente três classes, A, B e C, sendo que a relação de A e B é de (1:N) e a relação de A e C é de (N:N). Programa console do seu projeto, similar ao desenvolvido na aula.
+
+(2) Adição de funcionalidades:
+
+- Integração com ORM Entity Framework (não precisa refazer os passos ADO.NET)
+- Classes Context e DAL de Shared.Data
+- Desenvolva uma DAL genérica
+- Crie um novo banco com Migrations, alimentando-o com dados
+- Crie a relação entre as classes (1:N) utilizando Migrations e Proxies
+- Configure e teste o método GET na sua API
 
 ---
 
 ### Entrega da Atividade 1
 
 O diagrama de classes se encontra neste repositório assim como a implementação do projeto console. Para download do executável zipado, acesse a seção de releases deste repositório.
+
+- [Branch aula-1.2](https://github.com/vagnernogueira/GestaoFrotaVeicular/tree/aula-1.2)
+- [TAG v1 na branch master marcando último commit dessa atividade](https://github.com/vagnernogueira/GestaoFrotaVeicular/tree/v1)
+- [Release v1](https://github.com/vagnernogueira/GestaoFrotaVeicular/releases/tag/v1)
+
+---
+
+### Entrega da Atividade 2
+
+A implementação proposta se encontra neste repositório.
+
+- [Branch aula-2.4](https://github.com/vagnernogueira/GestaoFrotaVeicular/tree/aula-2.4)
+- [TAG v2 na branch master marcando último commit dessa atividade]()
+- [Release v2]()
 
 ---
 
@@ -59,3 +82,4 @@ O projeto "GestaoFrotaVeicular" é uma aplicação web desenvolvida em ASP.NET Core
 
 <img style="margin-right: 30px" src="DM109-class-diagram.png" alt="Class Diagram"/><br>
 
+---
