@@ -40,8 +40,8 @@ O diagrama de classes se encontra neste repositório assim como a implementação d
 A implementação proposta se encontra neste repositório.
 
 - [Branch aula-2.4](https://github.com/vagnernogueira/GestaoFrotaVeicular/tree/aula-2.4)
-- [TAG v2 na branch master marcando último commit dessa atividade]()
-- [Release v2]()
+- [TAG v2 na branch master marcando último commit dessa atividade](https://github.com/vagnernogueira/GestaoFrotaVeicular/tree/v2)
+- [Release v2](https://github.com/vagnernogueira/GestaoFrotaVeicular/releases/tag/v2)
 
 ---
 
