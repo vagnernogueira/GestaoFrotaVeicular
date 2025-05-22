@@ -1,33 +1,36 @@
-﻿-- Vehicle
+﻿
+CREATE TABLE vehicle
+  (
+     id        INT PRIMARY KEY IDENTITY(1, 1),
+     markmodel NVARCHAR(255) NOT NULL,
+     year      INT NOT NULL,
+     plate     NVARCHAR(255) NOT NULL
+  );
 
-create table Vehicle (
-	Id int primary key identity(1,1),
-	MarkModel nvarchar(255) not null,
-	Year int not null,
-	Plate nvarchar(255) not null
-);
+ALTER TABLE vehicle
+  ADD vehicletypeid INT NULL;
 
-ALTER TABLE Vehicle ADD VehicleTypeId INT null;
+ALTER TABLE vehicle
+  ADD CONSTRAINT fk_vehicle_vehicletype FOREIGN KEY (vehicletypeid) REFERENCES
+  vehicletype(id);
 
-ALTER TABLE Vehicle
-ADD CONSTRAINT FK_Vehicle_VehicleType
-FOREIGN KEY (VehicleTypeId) REFERENCES VehicleType(Id);
+SELECT *
+FROM   vehicle
 
-select * from Vehicle
+CREATE TABLE vehicletype
+  (
+     id          INT PRIMARY KEY IDENTITY(1, 1),
+     NAME        NVARCHAR(255) NOT NULL,
+     description NVARCHAR(255)
+  );
 
+SELECT *
+FROM   vehicletype
 
-create table VehicleType (
-	Id int primary key identity(1,1),
-	Name nvarchar(255) not null,
-	Description nvarchar(255)
-);
+DELETE FROM vehicletype
 
-select * from VehicleType
+DELETE FROM vehicle
 
-delete from VehicleType
+DROP TABLE vehicletype
 
-delete from Vehicle
-
-drop table VehicleType
-
-drop table Vehicle
+DROP TABLE vehicle 
