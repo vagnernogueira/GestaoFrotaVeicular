@@ -17,10 +17,19 @@ namespace GestaoFrotaVeicular.Shared.Data.DB
 
         public DbSet<VehicleType> VehicleType { get; set; }
 
+        public DbSet<Department> Department { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(connectionString)
                 .UseLazyLoadingProxies();
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Vehicle>()
+                .HasMany(c => c.Departments)
+                .WithMany(c => c.Vehicles);
         }
     }
 }

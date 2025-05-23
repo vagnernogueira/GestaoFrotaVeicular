@@ -29,8 +29,4 @@
     <ProjectReference Include="..\GestaoFrotaVeicular.Shared.Models\GestaoFrotaVeicular.Shared.Models.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Responses\" />
-  </ItemGroup>
-
 </Project>

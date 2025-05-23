@@ -18,6 +18,8 @@ namespace GestaoFrotaVeicular.Shared.Models
 
         public virtual VehicleType? VehicleType { get; set; }
 
+        public virtual ICollection<Department>? Departments { get; set; } = new List<Department>();
+
         public Vehicle() { }
 
         public Vehicle(string markModel, int year, string plate)
