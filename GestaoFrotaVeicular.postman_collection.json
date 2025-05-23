@@ -1,0 +1,932 @@
+{
+	"info": {
+		"_postman_id": "b0ff679a-1d93-4ab1-b347-b936142e9d40",
+		"name": "Gestão de Frota Veicular",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12863197"
+	},
+	"item": [
+		{
+			"name": "Vehicle",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "/Vehicle/:id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/Vehicle/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Vehicle",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-1525300",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/Vehicle/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Vehicle",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/Vehicle/:id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/Vehicle/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Vehicle",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-1525300",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/Vehicle/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Vehicle",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "/Vehicle",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Vehicle",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Vehicle"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/Vehicle",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Vehicle"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "/Vehicle",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"markModel\": \"cillum ut est labore\",\n  \"year\": -82160344,\n  \"plate\": \"consectetur aute sint ipsum\",\n  \"departments\": [\n    {\n      \"name\": \"veniam anim fugiat adipisicing\",\n      \"description\": \"exercitation in\"\n    },\n    {\n      \"name\": \"deserunt laborum\",\n      \"description\": \"re\"\n    }\n  ]\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Vehicle",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Vehicle"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"markModel\": \"cillum ut est labore\",\n  \"year\": -82160344,\n  \"plate\": \"consectetur aute sint ipsum\",\n  \"departments\": [\n    {\n      \"name\": \"veniam anim fugiat adipisicing\",\n      \"description\": \"exercitation in\"\n    },\n    {\n      \"name\": \"deserunt laborum\",\n      \"description\": \"re\"\n    }\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/Vehicle",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Vehicle"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "/Vehicle",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 3890433,\n  \"markModel\": \"Excepteur eu pariatur\",\n  \"year\": 7621519,\n  \"plate\": \"velit minim dolor nisi\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Vehicle",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Vehicle"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": 3890433,\n  \"markModel\": \"Excepteur eu pariatur\",\n  \"year\": 7621519,\n  \"plate\": \"velit minim dolor nisi\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/Vehicle",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Vehicle"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "VehicleType",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "/VehicleType/:id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/VehicleType/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"VehicleType",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-1525300",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/VehicleType/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"VehicleType",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/VehicleType/:id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/VehicleType/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"VehicleType",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-1525300",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/VehicleType/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"VehicleType",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "/VehicleType",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/VehicleType",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"VehicleType"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/VehicleType",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"VehicleType"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "/VehicleType",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"officia anim\",\n  \"description\": \"quis enim sed\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/VehicleType",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"VehicleType"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"officia anim\",\n  \"description\": \"quis enim sed\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/VehicleType",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"VehicleType"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "/VehicleType",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": -81085449,\n  \"name\": \"commodo sit anim adipisicing\",\n  \"description\": \"qui id dolore tempor\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/VehicleType",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"VehicleType"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -81085449,\n  \"name\": \"commodo sit anim adipisicing\",\n  \"description\": \"qui id dolore tempor\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/VehicleType",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"VehicleType"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Department",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "/Department/:id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/Department/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Department",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-1525300",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/Department/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Department",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "/Department/:id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/Department/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Department",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "-1525300",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/Department/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"Department",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "/Department",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/Department",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Department"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/Department",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Department"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "/Department",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"officia anim\",\n  \"description\": \"quis enim sed\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Department",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Department"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"officia anim\",\n  \"description\": \"quis enim sed\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/Department",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Department"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "/Department",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": -81085449,\n  \"name\": \"commodo sit anim adipisicing\",\n  \"description\": \"qui id dolore tempor\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/Department",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"Department"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": -81085449,\n  \"name\": \"commodo sit anim adipisicing\",\n  \"description\": \"qui id dolore tempor\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/Department",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"Department"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:5101"
+		}
+	]
+}
