@@ -23,6 +23,13 @@
 - Crie a relação entre as classes (1:N) utilizando Migrations e Proxies
 - Configure e teste o método GET na sua API
 
+(3) Adição de funcionalidades:
+
+- Completar a API com EndPoints utilizando DI.
+- Configurar a documentação Swagger.
+- Configurar DTOs para as requests e responses da API
+- Adicionar a classe N:N
+
 ---
 
 ### Entrega da Atividade 1
@@ -45,6 +52,17 @@ A implementação proposta se encontra neste repositório.
 
 ---
 
+### Entrega da Atividade 3
+
+A implementação proposta se encontra neste repositório.
+
+- [Branch aula-3.2](https://github.com/vagnernogueira/GestaoFrotaVeicular/tree/aula-3.2)
+- [TAG v3 na branch master marcando último commit dessa atividade](https://github.com/vagnernogueira/GestaoFrotaVeicular/tree/v3)
+- [Release v3](https://github.com/vagnernogueira/GestaoFrotaVeicular/releases/tag/v3)
+
+---
+
+
 # GestaoFrotaVeicular
 
 **Descrição:**
@@ -59,7 +77,7 @@ O projeto "GestaoFrotaVeicular" é uma aplicação web desenvolvida em ASP.NET Core
     * **Tipos de Veículo:** Cada veículo pertencerá a um único tipo (relação 1:N), como carro de passeio, caminhonete, furgão, caminhão leve, motocicleta.
 
 3.  **Entidade de Alocação/Associação:**
-    * **Departamentos/Projetos:** Veículos poderão ser alocados a múltiplos departamentos da empresa (ex: Vendas, Logística, Manutenção) ou a projetos específicos (relação N:N). Um departamento/projeto pode utilizar diversos veículos, e um veículo pode ser utilizado por/para múltiplos departamentos/projetos (talvez não simultaneamente, mas ao longo do tempo ou com compartilhamento).
+    * **Departamentos:** Veículos poderão ser alocados a múltiplos departamentos da empresa (ex: Vendas, Logística, Manutenção) ou a projetos específicos (relação N:N). Um departamento/projeto pode utilizar diversos veículos, e um veículo pode ser utilizado por/para múltiplos departamentos/projetos (talvez não simultaneamente, mas ao longo do tempo ou com compartilhamento).
 
 4.  **Funcionalidades:**
     * CRUD (Create, Read, Update, Delete) completo para Veículos, Tipos de Veículo e Departamentos/Projetos.
