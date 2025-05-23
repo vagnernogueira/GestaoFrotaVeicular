@@ -30,6 +30,12 @@
 - Configurar DTOs para as requests e responses da API
 - Adicionar a classe N:N
 
+(4) Adição de funcionalidades:
+
+- Adicionar a classe N:N **Entregue na atividade anterior**
+- Criar os EndPoints de Identity (Autenticação) com requisição de Autorização
+- Criar o método de Logout
+
 ---
 
 ### Entrega da Atividade 1
@@ -62,6 +68,15 @@ A implementação proposta se encontra neste repositório.
 
 ---
 
+### Entrega da Atividade 4
+
+A implementação proposta se encontra neste repositório.
+
+- [Branch aula-4.2](https://github.com/vagnernogueira/GestaoFrotaVeicular/tree/aula-4.2)
+- [TAG v4 na branch master marcando último commit dessa atividade](https://github.com/vagnernogueira/GestaoFrotaVeicular/tree/v4)
+- [Release v4](https://github.com/vagnernogueira/GestaoFrotaVeicular/releases/tag/v4)
+
+---
 
 # GestaoFrotaVeicular
 
