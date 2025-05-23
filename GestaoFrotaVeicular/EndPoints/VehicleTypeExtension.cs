@@ -9,7 +9,11 @@ namespace GestaoFrotaVeicular.EndPoints
     {
         public static void AddEndPointVehicleType(this WebApplication app)
         {
-            app.MapGet("/VehicleType", ([FromServices] DAL<VehicleType> dal) =>
+            var groupBuilder = app.MapGroup("/VehicleType/")
+                .RequireAuthorization()
+                .WithTags("VehicleType");
+
+            groupBuilder.MapGet("", ([FromServices] DAL<VehicleType> dal) =>
             {
                 var vehicleTypeList = dal.Read();
                 if (vehicleTypeList is null || !vehicleTypeList.Any())
@@ -18,7 +22,7 @@ namespace GestaoFrotaVeicular.EndPoints
                 return Results.Ok(responseList);
             });
 
-            app.MapGet("/VehicleType/{id}", ([FromServices] DAL<VehicleType> dal, [FromRoute] int id) =>
+            groupBuilder.MapGet("{id}", ([FromServices] DAL<VehicleType> dal, [FromRoute] int id) =>
             {
                 var vehicleType = dal.ReadBy(v => v.Id == id);
                 if (vehicleType == null)
@@ -26,14 +30,14 @@ namespace GestaoFrotaVeicular.EndPoints
                 return Results.Ok(EntityToResponse(vehicleType));
             });
 
-            app.MapPost("/VehicleType", ([FromServices] DAL<VehicleType> dal, [FromBody] VehicleTypeRequest vehicleTypeRequest) =>
+            groupBuilder.MapPost("", ([FromServices] DAL<VehicleType> dal, [FromBody] VehicleTypeRequest vehicleTypeRequest) =>
             {
                 VehicleType vehicleType = RequestToEntity(vehicleTypeRequest);
                 dal.Create(vehicleType);
                 return Results.Created($"/VehicleType/{vehicleType.Id}", vehicleType.Id);
             });
 
-            app.MapDelete("/VehicleType/{id}", ([FromServices] DAL<VehicleType> dal, [FromRoute] int id) =>
+            groupBuilder.MapDelete("{id}", ([FromServices] DAL<VehicleType> dal, [FromRoute] int id) =>
             {
                 var vehicleType = dal.ReadBy(v => v.Id == id);
                 if (vehicleType == null)
@@ -42,7 +46,7 @@ namespace GestaoFrotaVeicular.EndPoints
                 return Results.NoContent();
             });
 
-            app.MapPut("/VehicleType", ([FromServices] DAL<VehicleType> dal, [FromBody] VehicleTypeEditRequest vehicleTypeEditRequest) =>
+            groupBuilder.MapPut("", ([FromServices] DAL<VehicleType> dal, [FromBody] VehicleTypeEditRequest vehicleTypeEditRequest) =>
             {
                 var existingVehicleType = dal.ReadBy(v => v.Id == vehicleTypeEditRequest.id);
                 if (existingVehicleType == null)

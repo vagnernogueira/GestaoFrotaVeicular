@@ -1,4 +1,6 @@
-﻿using GestaoFrotaVeicular.Shared.Models;
+﻿using GestaoFrotaVeicular.Shared.Data.Models;
+using GestaoFrotaVeicular.Shared.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -9,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace GestaoFrotaVeicular.Shared.Data.DB
 {
-    public class GestaoFrotaVeicularContext : DbContext
+    public class GestaoFrotaVeicularContext : IdentityDbContext<AccessUser, AccessRole, int>
     {
         private string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=GestaoFrotaVeicular_BD_V0;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False";
 
@@ -27,6 +29,7 @@ namespace GestaoFrotaVeicular.Shared.Data.DB
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Vehicle>()
                 .HasMany(c => c.Departments)
                 .WithMany(c => c.Vehicles);

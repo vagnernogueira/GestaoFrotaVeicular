@@ -9,7 +9,11 @@ namespace GestaoFrotaVeicular.EndPoints
     {
         public static void AddEndPointDepartment(this WebApplication app)
         {
-            app.MapGet("/Department", ([FromServices] DAL<Department> dal) =>
+            var groupBuilder = app.MapGroup("/Department/")
+                .RequireAuthorization()
+                .WithTags("Department");
+
+            groupBuilder.MapGet("", ([FromServices] DAL<Department> dal) =>
             {
                 var departmentList = dal.Read();
                 if (departmentList is null || !departmentList.Any())
@@ -17,20 +21,20 @@ namespace GestaoFrotaVeicular.EndPoints
                 var responseList = EntityListToResponseList(departmentList);
                 return Results.Ok(responseList);
             });
-            app.MapGet("/Department/{id}", ([FromServices] DAL<Department> dal, [FromRoute] int id) =>
+            groupBuilder.MapGet("{id}", ([FromServices] DAL<Department> dal, [FromRoute] int id) =>
             {
                 var department = dal.ReadBy(d => d.Id == id);
                 if (department == null)
                     return Results.NotFound();
                 return Results.Ok(EntityToResponse(department));
             });
-            app.MapPost("/Department", ([FromServices] DAL<Department> dal, [FromBody] DepartmentRequest departmentRequest) =>
+            groupBuilder.MapPost("", ([FromServices] DAL<Department> dal, [FromBody] DepartmentRequest departmentRequest) =>
             {
                 var department = RequestToEntity(departmentRequest);
                 dal.Create(department);
                 return Results.Created($"/Department/{department.Id}", department.Id);
             });
-            app.MapDelete("/Department/{id}", ([FromServices] DAL<Department> dal, [FromRoute] int id) =>
+            groupBuilder.MapDelete("{id}", ([FromServices] DAL<Department> dal, [FromRoute] int id) =>
             {
                 var department = dal.ReadBy(d => d.Id == id);
                 if (department == null)
@@ -38,7 +42,7 @@ namespace GestaoFrotaVeicular.EndPoints
                 dal.Delete(department);
                 return Results.NoContent();
             });
-            app.MapPut("/Department", ([FromServices] DAL<Department> dal, [FromBody] DepartmentEditRequest departmentEditRequest) =>
+            groupBuilder.MapPut("", ([FromServices] DAL<Department> dal, [FromBody] DepartmentEditRequest departmentEditRequest) =>
             {
                 var existingDepartment = dal.ReadBy(d => d.Id == departmentEditRequest.id);
                 if (existingDepartment == null)

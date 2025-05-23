@@ -9,7 +9,11 @@ namespace GestaoFrotaVeicular.EndPoints
     {
         public static void AddEndPointVehicle(this WebApplication app)
         {
-            app.MapGet("/Vehicle", ([FromServices] DAL<Vehicle> dal) =>
+            var groupBuilder = app.MapGroup("/Vehicle/")
+                .RequireAuthorization()
+                .WithTags("Vehicle");
+
+            groupBuilder.MapGet("", ([FromServices] DAL<Vehicle> dal) =>
             {
                 var vehicleList = dal.Read();
                 if (vehicleList is null || !vehicleList.Any())
@@ -18,7 +22,7 @@ namespace GestaoFrotaVeicular.EndPoints
                 return Results.Ok(responseList);
             });
 
-            app.MapGet("/Vehicle/{id}", ([FromServices] DAL<Vehicle> dal, [FromRoute] int id) =>
+            groupBuilder.MapGet("{id}", ([FromServices] DAL<Vehicle> dal, [FromRoute] int id) =>
             {
                 var vehicle = dal.ReadBy(v => v.Id == id);
                 if (vehicle == null)
@@ -26,14 +30,14 @@ namespace GestaoFrotaVeicular.EndPoints
                 return Results.Ok(EntityToResponse(vehicle));
             });
 
-            app.MapPost("/Vehicle", ([FromServices] DAL<Vehicle> ndal, [FromServices] DAL<Department> mdal, [FromBody] VehicleRequest vehicleRequest) =>
+            groupBuilder.MapPost("", ([FromServices] DAL<Vehicle> ndal, [FromServices] DAL<Department> mdal, [FromBody] VehicleRequest vehicleRequest) =>
             {
                 var vehicle = RequestToEntity(vehicleRequest, mdal);
                 ndal.Create(vehicle);
                 return Results.Created($"/Vehicle/{vehicle.Id}", vehicle.Id);
             });
 
-            app.MapDelete("/Vehicle/{id}", ([FromServices] DAL<Vehicle> dal, [FromRoute] int id) =>
+            groupBuilder.MapDelete("{id}", ([FromServices] DAL<Vehicle> dal, [FromRoute] int id) =>
             {
                 var vehicle = dal.ReadBy(v => v.Id == id);
                 if (vehicle == null)
@@ -42,7 +46,7 @@ namespace GestaoFrotaVeicular.EndPoints
                 return Results.NoContent();
             });
 
-            app.MapPut("/Vehicle", ([FromServices] DAL<Vehicle> dal, [FromBody] VehicleEditRequest vehicleEditRequest) =>
+            groupBuilder.MapPut("", ([FromServices] DAL<Vehicle> dal, [FromBody] VehicleEditRequest vehicleEditRequest) =>
             {
                 var existingVehicle = dal.ReadBy(v => v.Id == vehicleEditRequest.id);
                 if (existingVehicle == null)
